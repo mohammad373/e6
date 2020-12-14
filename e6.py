@@ -27,8 +27,9 @@ def __target__():
         target = "http://" + target
     #ip = socket.gethostbyname(target)
     r = requests.get(target)
-    if r.status_code == 200:
-        print(Fore.GREEN + "[" + Fore.BLUE + "+" + Fore.GREEN + "]" + Fore.BLUE + " ~ " + Fore.GREEN + target )
-    else:
-        print(Fore.RED + "[" + Fore.YELLOW + "+" + Fore.RED + "]" + Fore.YELLOW + " ~ " + Fore.RED + target )
+    while True:
+        if r.status_code == 200:
+            print(Fore.GREEN + "[" + Fore.BLUE + "+" + Fore.GREEN + "]" + Fore.BLUE + " ~ " + Fore.GREEN + target )
+        else:
+            print(Fore.RED + "[" + Fore.YELLOW + "+" + Fore.RED + "]" + Fore.YELLOW + " ~ " + Fore.RED + target )
 __target__()
