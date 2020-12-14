@@ -25,10 +25,10 @@ def __target__():
             pass
     if not "http" in target or not "https://" in target:
         target = "http://" + target
-    ip = socket.gethostbyname(target)
+    #ip = socket.gethostbyname(target)
     r = requests.get(target)
     if r.status_code == 200:
-        print(Fore.GREEN + "[" + Fore.BLUE + "+" + Fore.GREEN + "]" + Fore.BLUE + " ~ " + Fore.GREEN + target + Fore.BLUE + ip)
+        print(Fore.GREEN + "[" + Fore.BLUE + "+" + Fore.GREEN + "]" + Fore.BLUE + " ~ " + Fore.GREEN + target )
     else:
-        print(Fore.RED + "[" + Fore.YELLOW + "+" + Fore.RED + "]" + Fore.YELLOW + " ~ " + Fore.RED + target + Fore.YELLOW + ip)
+        print(Fore.RED + "[" + Fore.YELLOW + "+" + Fore.RED + "]" + Fore.YELLOW + " ~ " + Fore.RED + target )
 __target__()
